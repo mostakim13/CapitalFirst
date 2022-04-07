@@ -15,16 +15,17 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('referrer_id');
             $table->string('name')->nullable();
             $table->string('username')->nullable();
             $table->string('activation_status')->nullable();
             $table->string('number')->nullable();
             $table->string('country')->nullable();
             $table->string('gender')->nullable();
-            $table->string('placement_id')->nullable();
+            $table->string('placement_id')->default(1);
             $table->string('position')->nullable();
-            $table->string('left_count')->nullable();
-            $table->string('right_count')->nullable();
+            $table->string('left_count')->nullable()->default(0);
+            $table->string('right_count')->nullable()->default(0);
             $table->string('rank')->nullable();
             $table->string('status')->nullable();
             $table->string('membership_status')->nullable();

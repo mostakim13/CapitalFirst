@@ -37,7 +37,7 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class=" col-md-6">
-                                    <div class="main-box">
+                                    <div class="main-box mt-2">
                                         <div class="main-box-content d-flex justify-content-between">
                                             <div class="left d-flex">
                                                 <div class="main-box-content-icon">
@@ -46,8 +46,9 @@
                                                 <div class="main-box-content-name">
                                                     <h6 class="m-0">Referral Link</h6>
                                                     <a href="#"
-                                                        class="text-primary text-decoration-underline copyBtn">https://tokyosecurities.com/register/Adeel1</a>
+                                                        class="text-primary text-decoration-underline copyBtn">{{ Auth::user()->referral_link }}</a>
                                                 </div>
+
                                             </div>
                                             <div class="copy-btn mt-2">
                                                 <button class="btn btn-sm btn-outline-warning copy_btn"
@@ -58,12 +59,14 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="main-box">
+                                    <div class="main-box mt-2">
                                         <form method="post" class="m-0"
-                                            action="https://tokyosecurities.com/referral/set-position">
+                                            action="{{ route('update-position') }}">
+                                            @csrf
                                             <div class="main-box-content d-flex justify-content-between">
-                                                <input type="hidden" name="_token"
-                                                    value="8Ac8sEpFAkT42hNsxtuPeusexEey6h8RFZgYPKTd">
+
+                                                    <input type="hidden" name="id" value="{{ Auth::user()->id }}">
+                                                    <input type="hidden" name="placement_id" value="{{ Auth::user()->placement_id }}">
                                                 <div class="d-flex">
                                                     <div class="main-box-content-icon">
                                                         <i class="bi bi-link-45deg text-danger"></i>
@@ -74,8 +77,12 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="position" value="LEFT" id="positionLEFT"
-                                                                        checked>
+                                                                        name="position" value="1" id="positionLEFT" @if (Auth::user()->position == 1)
+                                                                        checked
+                                                                        @else
+
+                                                                        @endif
+                                                                        >
                                                                     <label class="form-check-label"
                                                                         for="positionLEFT">LEFT</label>
                                                                 </div>
@@ -83,7 +90,11 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input " type="radio"
-                                                                        name="position" value="RIGHT" id="positionRIGHT">
+                                                                        name="position" value="2" id="positionRIGHT"  @if (Auth::user()->position == 2)
+                                                                        checked
+                                                                        @else
+
+                                                                        @endif>
                                                                     <label class="form-check-label"
                                                                         for="positionRIGHT">RIGHT</label>
                                                                 </div>

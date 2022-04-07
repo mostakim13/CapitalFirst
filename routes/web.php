@@ -12,7 +12,8 @@ use App\Http\Controllers\EducationController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\NetworkController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RefferalController;
+use App\Http\Controllers\ReferralController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\TradeactivationController;
@@ -38,6 +39,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/home/get-sponsor', [ReferralController::class,'getSponsor'])->name('get-sponsor');
+Route::post('/home/check-position', [ReferralController::class,'checkPosition'])->name('referrals-checkposition');
+// Route::get('/referral', [Home])->middleware('referral');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth'], 'namespace' => 'Admin'], function () {
     Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
@@ -74,7 +78,8 @@ Route::group(['prefix' => 'user', 'middleware' => ['user', 'auth'], 'namespace' 
     Route::get('my-profile/nok', [ProfileController::class, 'nextOfKin'])->name('nextOfKin');
 
     //refferals
-    Route::get('refferal', [RefferalController::class, 'index'])->name('refferals');
+    Route::get('refferal', [ReferralController::class, 'index'])->name('refferals');
+    Route::post('update/position',[ReferralController::class,'updatePosition'])->name('update-position');
 
     //trade activation
     Route::get('trade/activation', [TradeactivationController::class, 'index'])->name('trade-activation');

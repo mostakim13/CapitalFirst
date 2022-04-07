@@ -99,7 +99,7 @@
                     <div class="uk-navbar-left uk-width-auto">
                         <div class="uk-navbar-item">
 
-                            <a class="uk-logo" href="#">
+                            <a class="uk-logo" href="/">
 
                                 <img src="/frontend1.png" alt="Capital First">
                             </a>

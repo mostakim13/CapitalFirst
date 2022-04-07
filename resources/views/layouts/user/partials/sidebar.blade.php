@@ -1,4 +1,4 @@
-<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+<div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto"><a class="navbar-brand"
@@ -41,7 +41,7 @@
                             </g>
                         </svg></span> --}}
                         <a class="nav-link" href="{{ route('user.dashboard') }}"
-                        data-toggle="tooltip" data-placement="top" title="Email"> Capital First </a>
+                        data-toggle="tooltip" data-placement="top"> <img src="/login.png" alt="Capital First" height="50px" width="130px"> </a>
                 </a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
                         class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i
