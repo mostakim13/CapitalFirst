@@ -75,6 +75,8 @@ Route::group(['prefix' => 'user', 'middleware' => ['user', 'auth'], 'namespace' 
     //profle
     Route::get('my/profile', [ProfileController::class, 'index'])->name('profile-dashboard');
     Route::get('my-profile/change-password', [ProfileController::class, 'security'])->name('security');
+    Route::post('my-profile/change-password/store', [ProfileController::class, 'passwordStore'])->name('password-store');
+
     Route::get('my-profile/nok', [ProfileController::class, 'nextOfKin'])->name('nextOfKin');
 
     //refferals

@@ -65,8 +65,9 @@
                                             @csrf
                                             <div class="main-box-content d-flex justify-content-between">
 
-                                                    <input type="hidden" name="id" value="{{ Auth::user()->id }}">
-                                                    <input type="hidden" name="placement_id" value="{{ Auth::user()->placement_id }}">
+                                                <input type="hidden" name="id" value="{{ Auth::user()->id }}">
+                                                <input type="hidden" name="placement_id"
+                                                    value="{{ Auth::user()->placement_id }}">
                                                 <div class="d-flex">
                                                     <div class="main-box-content-icon">
                                                         <i class="bi bi-link-45deg text-danger"></i>
@@ -77,12 +78,9 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input" type="radio"
-                                                                        name="position" value="1" id="positionLEFT" @if (Auth::user()->position == 1)
-                                                                        checked
-                                                                        @else
-
-                                                                        @endif
-                                                                        >
+                                                                        name="position" value="1" id="positionLEFT"
+                                                                        @if (Auth::user()->position == 1) checked
+                                                                        @else @endif>
                                                                     <label class="form-check-label"
                                                                         for="positionLEFT">LEFT</label>
                                                                 </div>
@@ -90,11 +88,9 @@
                                                             <div class="col-md-6">
                                                                 <div class="form-check">
                                                                     <input class="form-check-input " type="radio"
-                                                                        name="position" value="2" id="positionRIGHT"  @if (Auth::user()->position == 2)
-                                                                        checked
-                                                                        @else
-
-                                                                        @endif>
+                                                                        name="position" value="2" id="positionRIGHT"
+                                                                        @if (Auth::user()->position == 2) checked
+                                                                        @else @endif>
                                                                     <label class="form-check-label"
                                                                         for="positionRIGHT">RIGHT</label>
                                                                 </div>
@@ -125,9 +121,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td colspan="5" class="text-center">NO DATA</td>
-                                </tr>
+                                @foreach ($users as $user)
+                                    <tr>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->position }}</td>
+                                        <td>{{ $user->created_at->format('d-m-Y') }}</td>
+                                        <td>{{ $user->status }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

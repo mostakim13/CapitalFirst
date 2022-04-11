@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('referrer_id');
             $table->string('name')->nullable();
-            $table->string('username')->nullable();
+            $table->string('user_name')->nullable();
             $table->string('activation_status')->nullable();
             $table->string('number')->nullable();
             $table->string('country')->nullable();

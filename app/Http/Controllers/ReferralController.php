@@ -12,7 +12,8 @@ class ReferralController extends Controller
 {
     public function index()
     {
-        return view('user.refferals.refferals');
+        $users = User::all();
+        return view('user.refferals.refferals', compact('users'));
     }
 
     public function updatePosition(Request $request)
