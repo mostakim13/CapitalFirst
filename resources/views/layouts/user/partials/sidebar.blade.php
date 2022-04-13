@@ -40,8 +40,9 @@
                                 </g>
                             </g>
                         </svg></span> --}}
-                        <a class="nav-link" href="{{ route('user.dashboard') }}"
-                        data-toggle="tooltip" data-placement="top"> <img src="/login.png" alt="Capital First" height="50px" width="130px"> </a>
+                    <a class="nav-link" href="{{ route('user.dashboard') }}" data-toggle="tooltip"
+                        data-placement="top"> <img src="/login.png" alt="Capital First" height="50px" width="130px">
+                    </a>
                 </a></li>
             <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
                         class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i><i
@@ -141,13 +142,9 @@
                 </ul>
             </li>
 
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('refferals') }}"><i data-feather="link"></i><span
-                        class="menu-title text-truncate" data-i18n="Invoice">Referrals</span></a>
-            </li>
-
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('trade-activation') }}"><i data-feather="link"></i><span
-                        class="menu-title text-truncate" data-i18n="Invoice">Trade
-                        Activation</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('refferals') }}"><i
+                        data-feather="link"></i><span class="menu-title text-truncate"
+                        data-i18n="Invoice">Referrals</span></a>
             </li>
 
             <li class=" nav-item"><a class="d-flex align-items-center" href="#"><i
@@ -170,12 +167,14 @@
                         data-i18n="Invoice">Downloads</span></a>
             </li>
 
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('education') }}"><i data-feather="book"></i><span
-                        class="menu-title text-truncate" data-i18n="Invoice">Education</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('education') }}"><i
+                        data-feather="book"></i><span class="menu-title text-truncate"
+                        data-i18n="Invoice">Education</span></a>
             </li>
 
-            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('suggestions') }}"><i data-feather="mail"></i><span
-                        class="menu-title text-truncate" data-i18n="Invoice">Suggestions</span></a>
+            <li class=" nav-item"><a class="d-flex align-items-center" href="{{ route('suggestions') }}"><i
+                        data-feather="mail"></i><span class="menu-title text-truncate"
+                        data-i18n="Invoice">Suggestions</span></a>
             </li>
 
         </ul>

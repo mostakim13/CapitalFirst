@@ -1,16 +1,4 @@
-{{-- <header>
-    <div class="uk-section uk-padding-small in-profit-ticker" style="padding: 0px !important;">
-        <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget">
-                <iframe scrolling="no" allowtransparency="true" frameborder="0"
-                    src="https://s.tradingview.com/embed-widget/ticker-tape/?locale=en#%7B%22symbols%22%3A%5B%7B%22proName%22%3A%22FOREXCOM%3ASPXUSD%22%2C%22title%22%3A%22S%26P%20500%22%7D%2C%7B%22proName%22%3A%22FOREXCOM%3ANSXUSD%22%2C%22title%22%3A%22US%20100%22%7D%2C%7B%22proName%22%3A%22FX_IDC%3AEURUSD%22%2C%22title%22%3A%22EUR%2FUSD%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3ABTCUSD%22%2C%22title%22%3A%22Bitcoin%22%7D%2C%7B%22proName%22%3A%22BITSTAMP%3AETHUSD%22%2C%22title%22%3A%22Ethereum%22%7D%5D%2C%22showSymbolLogo%22%3Atrue%2C%22colorTheme%22%3A%22light%22%2C%22isTransparent%22%3Afalse%2C%22displayMode%22%3A%22adaptive%22%2C%22width%22%3A%22100%25%22%2C%22height%22%3A46%2C%22utm_source%22%3A%22tokyosecurities.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22ticker-tape%22%7D"
-                    style="height: 50px; width: 100%;"></iframe>
-            </div>
-
-        </div>
-    </div>
-</header> --}}
-<nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-light navbar-shadow">
+<nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-dark navbar-shadow">
     <div class="navbar-container d-flex content">
         <div class="bookmark-wrapper d-flex align-items-center">
             <ul class="nav navbar-nav d-xl-none">
@@ -18,16 +6,57 @@
                             class="ficon" data-feather="menu"></i></a></li>
             </ul>
             <ul class="nav navbar-nav bookmark-icons">
-                <li class="nav-item d-none d-lg-block"></li>
-
+                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-email.html"
+                        data-toggle="tooltip" data-placement="top" title="Email"><i class="ficon"
+                            data-feather="mail"></i></a></li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-chat.html"
+                        data-toggle="tooltip" data-placement="top" title="Chat"><i class="ficon"
+                            data-feather="message-square"></i></a></li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-calendar.html"
+                        data-toggle="tooltip" data-placement="top" title="Calendar"><i class="ficon"
+                            data-feather="calendar"></i></a></li>
+                <li class="nav-item d-none d-lg-block"><a class="nav-link" href="app-todo.html"
+                        data-toggle="tooltip" data-placement="top" title="Todo"><i class="ficon"
+                            data-feather="check-square"></i></a></li>
             </ul>
-
+            <ul class="nav navbar-nav">
+                <li class="nav-item d-none d-lg-block"><a class="nav-link bookmark-star"><i class="ficon text-warning"
+                            data-feather="star"></i></a>
+                    <div class="bookmark-input search-input">
+                        <div class="bookmark-input-icon"><i data-feather="search"></i></div>
+                        <input class="form-control input" type="text" placeholder="Bookmark" tabindex="0"
+                            data-search="search">
+                        <ul class="search-list search-list-bookmark"></ul>
+                    </div>
+                </li>
+            </ul>
         </div>
         <ul class="nav navbar-nav align-items-center ml-auto">
-
-
-
-            {{-- <li class="nav-item dropdown dropdown-cart mr-25"><a class="nav-link" href="javascript:void(0);"
+            <li class="nav-item dropdown dropdown-language"><a class="nav-link dropdown-toggle" id="dropdown-flag"
+                    href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                        class="flag-icon flag-icon-us"></i><span class="selected-language">English</span></a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-flag"><a class="dropdown-item"
+                        href="javascript:void(0);" data-language="en"><i class="flag-icon flag-icon-us"></i>
+                        English</a><a class="dropdown-item" href="javascript:void(0);" data-language="fr"><i
+                            class="flag-icon flag-icon-fr"></i>
+                        French</a><a class="dropdown-item" href="javascript:void(0);" data-language="de"><i
+                            class="flag-icon flag-icon-de"></i> German</a><a class="dropdown-item"
+                        href="javascript:void(0);" data-language="pt"><i class="flag-icon flag-icon-pt"></i>
+                        Portuguese</a></div>
+            </li>
+            <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon"
+                        data-feather="sun"></i></a></li>
+            <li class="nav-item nav-search"><a class="nav-link nav-link-search"><i class="ficon"
+                        data-feather="search"></i></a>
+                <div class="search-input">
+                    <div class="search-input-icon"><i data-feather="search"></i></div>
+                    <input class="form-control input" type="text" placeholder="Explore Vuexy..." tabindex="-1"
+                        data-search="search">
+                    <div class="search-input-close"><i data-feather="x"></i></div>
+                    <ul class="search-list search-list-main"></ul>
+                </div>
+            </li>
+            <li class="nav-item dropdown dropdown-cart mr-25"><a class="nav-link" href="javascript:void(0);"
                     data-toggle="dropdown"><i class="ficon" data-feather="shopping-cart"></i><span
                         class="badge badge-pill badge-primary badge-up cart-item-count">6</span></a>
                 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
@@ -126,8 +155,8 @@
                         </div><a class="btn btn-primary btn-block" href="app-ecommerce-checkout.html">Checkout</a>
                     </li>
                 </ul>
-            </li> --}}
-            {{-- <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link"
+            </li>
+            <li class="nav-item dropdown dropdown-notification mr-25"><a class="nav-link"
                     href="javascript:void(0);" data-toggle="dropdown"><i class="ficon"
                         data-feather="bell"></i><span class="badge badge-pill badge-danger badge-up">5</span></a>
                 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
@@ -230,26 +259,32 @@
                     <li class="dropdown-menu-footer"><a class="btn btn-primary btn-block"
                             href="javascript:void(0)">Read all notifications</a></li>
                 </ul>
-            </li> --}}
+            </li>
             <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link"
                     id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
-                    <div class="user-nav d-sm-flex d-none"><span
-                            class="user-name font-weight-bolder">{{ Auth::user()->name }}</span><span
-                            class="user-status">{{ Auth::user()->role->name }}</span></div><span
-                        class="avatar"><img class="round"
-                            src="../../../app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40"
-                            width="40"><span class="avatar-status-online"></span></span>
+                    <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">John
+                            Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img
+                            class="round" src="../../../app-assets/images/portrait/small/avatar-s-11.jpg"
+                            alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item"
-                        href="{{ route('profile-dashboard') }}"><i class="mr-50" data-feather="user"></i>My
-                        Profile</a>
-                    <div class="dropdown-divider"></div><a class="dropdown-item" href="{{ route('security') }}"><i
-                            class="mr-50" data-feather="help-circle"></i>
-                        Change Password</a>
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();"><i class="mr-50"
-                            data-feather="power"></i> Logout</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a
+                        class="dropdown-item" href="page-profile.html"><i class="mr-50"
+                            data-feather="user"></i> Profile</a><a class="dropdown-item" href="app-email.html"><i
+                            class="mr-50" data-feather="mail"></i> Inbox</a><a class="dropdown-item"
+                        href="app-todo.html"><i class="mr-50" data-feather="check-square"></i> Task</a><a
+                        class="dropdown-item" href="app-chat.html"><i class="mr-50"
+                            data-feather="message-square"></i> Chats</a>
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="page-account-settings.html"><i
+                            class="mr-50" data-feather="settings"></i>
+                        Settings</a><a class="dropdown-item" href="page-pricing.html"><i class="mr-50"
+                            data-feather="credit-card"></i> Pricing</a><a class="dropdown-item"
+                        href="page-faq.html"><i class="mr-50" data-feather="help-circle"></i> FAQ</a><a
+                        class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                            class="mr-50" data-feather="power"></i> Logout</a>
+
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
@@ -268,8 +303,8 @@
                 <div class="mr-75"><img src="../../../app-assets/images/icons/xls.png" alt="png" height="32">
                 </div>
                 <div class="search-data">
-                    <p class="search-data-title mb-0">Two new item submitted</p><small class="text-muted">Marketing
-                        Manager</small>
+                    <p class="search-data-title mb-0">Two new item submitted</p><small
+                        class="text-muted">Marketing Manager</small>
                 </div>
             </div><small class="search-data-size mr-50 text-muted">&apos;17kb</small>
         </a></li>
@@ -361,4 +396,3 @@
                     data-feather="alert-circle"></span><span>No results found.</span></div>
         </a></li>
 </ul>
-<!-- END: Header-->

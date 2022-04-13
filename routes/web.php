@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountsController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\AwardController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\DepositController;
@@ -39,12 +40,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::post('/home/get-sponsor', [ReferralController::class,'getSponsor'])->name('get-sponsor');
-Route::post('/home/check-position', [ReferralController::class,'checkPosition'])->name('referrals-checkposition');
+Route::post('/home/get-sponsor', [ReferralController::class, 'getSponsor'])->name('get-sponsor');
+Route::post('/home/check-position', [ReferralController::class, 'checkPosition'])->name('referrals-checkposition');
 // Route::get('/referral', [Home])->middleware('referral');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin', 'auth'], 'namespace' => 'Admin'], function () {
     Route::get('dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/user-lists', [AdminController::class, 'userList'])->name('user.lists');
+
+
+    //payment method
+    Route::get('/payment-method', [PaymentController::class, 'paymentMethod'])->name('payment.method');
+    Route::post('/payment-method/store', [PaymentController::class, 'paymentMethodStore'])->name('payment-method-store');
+    Route::post('/payment-method/update', [PaymentController::class, 'paymentMethodUpdate'])->name('payment-method-update');
+    Route::get('payment-method/destroy/{id}', [PaymentController::class, 'destroy']);
 });
 
 Route::group(['prefix' => 'user', 'middleware' => ['user', 'auth'], 'namespace' => 'User'], function () {
@@ -66,8 +75,8 @@ Route::group(['prefix' => 'user', 'middleware' => ['user', 'auth'], 'namespace' 
     Route::get('network', [NetworkController::class, 'index'])->name('network-dashboard');
 
     //awards
-    Route::get('rank/awards', [AwardController ::class, 'index'])->name('award-dashboard');
-    Route::get('executive/awards', [AwardController ::class, 'executiveAwards'])->name('executive-dashboard');
+    Route::get('rank/awards', [AwardController::class, 'index'])->name('award-dashboard');
+    Route::get('executive/awards', [AwardController::class, 'executiveAwards'])->name('executive-dashboard');
 
     //documents
     Route::get('kyc/documents', [DocumentController::class, 'index'])->name('document-dashboard');
@@ -81,23 +90,21 @@ Route::group(['prefix' => 'user', 'middleware' => ['user', 'auth'], 'namespace' 
 
     //refferals
     Route::get('refferal', [ReferralController::class, 'index'])->name('refferals');
-    Route::post('update/position',[ReferralController::class,'updatePosition'])->name('update-position');
+    Route::post('update/position', [ReferralController::class, 'updatePosition'])->name('update-position');
 
-    //trade activation
-    Route::get('trade/activation', [TradeactivationController::class, 'index'])->name('trade-activation');
+
 
     //support
-    Route::get('support/new-ticket',[SupportController::class,'index'])->name('new-ticket');
+    Route::get('support/new-ticket', [SupportController::class, 'index'])->name('new-ticket');
 
     //download
-    Route::get('downloads',[DownloadController::class,'index'])->name('download');
+    Route::get('downloads', [DownloadController::class, 'index'])->name('download');
 
     //education
-    Route::get('education',[EducationController::class,'index'])->name('education');
+    Route::get('education', [EducationController::class, 'index'])->name('education');
 
     //suggestions
-    Route::get('suggestion',[SuggestionController::class,'index'])->name('suggestions');
-
+    Route::get('suggestion', [SuggestionController::class, 'index'])->name('suggestions');
 });
 
 //=======================Frontend=======================

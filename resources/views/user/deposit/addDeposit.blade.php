@@ -45,6 +45,21 @@
                                 <span class="text-danger error error_currency d-none d-none"></span>
                             </div>
                         </div>
+
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="currency">Select Method</label>
+                                <select class="form-control" name="name" id="currency">
+                                    <option hidden value="">Please Select</option>
+                                    @foreach ($paymentMethods as $paymentMethod)
+                                        <option value="{{ $paymentMethod->id }}">{{ $paymentMethod->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                <span class="text-danger error error_currency d-none d-none"></span>
+                            </div>
+                        </div>
+
                         <div class="col-12 mt-3">
                             <div class="form-group">
                                 <label for="amount">Enter Amount <small class="text-muted">USD</small></label>

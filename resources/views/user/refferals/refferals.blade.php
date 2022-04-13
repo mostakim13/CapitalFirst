@@ -13,7 +13,7 @@
                     <div class="col-xl-6 col-sm-6 mb-20">
                         <div class="card border-top-warning border-bottom-warning">
                             <div class="card-body">
-                                <h5 class="card-title p-0 pt-4">0</h5>
+                                <h5 class="card-title p-0 pt-4">{{ Auth::user()->left_count }}</h5>
                                 <p class="card-text"><i class="bi bi-diagram-2 text-danger"></i> <b>LEFT</b>
                                     <small>Referrals</small>
                                 </p>
@@ -24,7 +24,7 @@
                     <div class="col-xl-6 col-sm-6 mb-20">
                         <div class="card border-top-warning border-bottom-warning">
                             <div class="card-body">
-                                <h5 class="card-title p-0 pt-4">0</h5>
+                                <h5 class="card-title p-0 pt-4">{{ Auth::user()->right_count }}</h5>
                                 <p class="card-text"><i class="bi bi-diagram-2 text-danger"></i> <b>RIGHT</b>
                                     <small>Referrals</small>
                                 </p>
@@ -36,7 +36,7 @@
                     <div class="card-body">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class=" col-md-6">
+                                <div class="col-md-6">
                                     <div class="main-box mt-2">
                                         <div class="main-box-content d-flex justify-content-between">
                                             <div class="left d-flex">
@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="main-box mt-2">
+                                    <div class="main-box mt-2 ml-2">
                                         <form method="post" class="m-0"
                                             action="{{ route('update-position') }}">
                                             @csrf
@@ -121,11 +121,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $user)
+                                @foreach ($sponsor as $user)
                                     <tr>
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
-                                        <td>{{ $user->position }}</td>
+                                        <td>
+                                            @if ($user->position == 1)
+                                                Left
+                                            @elseif($user->position == 2)
+                                                Right
+                                            @endif
+                                        </td>
                                         <td>{{ $user->created_at->format('d-m-Y') }}</td>
                                         <td>{{ $user->status }}</td>
                                     </tr>

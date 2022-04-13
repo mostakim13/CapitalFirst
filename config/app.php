@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        \Kevupton\LaravelCoinpayments\Providers\LaravelCoinpaymentsServiceProvider::class,
         // \Questocat\Referral\ReferralServiceProvider::class,
         /*
          * Package Service Providers...

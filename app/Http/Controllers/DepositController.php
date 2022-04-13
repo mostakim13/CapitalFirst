@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Deposit;
+use App\Models\Paymentmethod;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -11,7 +12,8 @@ class DepositController extends Controller
 {
     public function index()
     {
-        return view('user.deposit.deposit');
+        $paymentMethods = Paymentmethod::all();
+        return view('user.deposit.deposit', compact('paymentMethods'));
     }
     public function depositStore(Request $request)
     {

@@ -20,7 +20,7 @@
                                     <h3><b>{{ Auth::user()->username }}</b></h3>
                                     <h3><i class="bi bi-envelope-fill"></i> <a href="/cdn-cgi/l/email-protection"
                                             class="__cf_email__"
-                                            data-cfemail="50313435353c31383d35343d352431616110373d31393c7e333f3d">[email&#160;protected]</a>
+                                            data-cfemail="50313435353c31383d35343d352431616110373d31393c7e333f3d">{{ Auth::user()->email }}</a>
                                     </h3>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                                         <div class="col-4 col-lg-3 col-md-4 label p-2">Email</div>
                                         <div class="col-8 col-lg-9 col-md-8 p-2"><a href="/cdn-cgi/l/email-protection"
                                                 class="__cf_email__"
-                                                data-cfemail="f9989d9c9c959891949c9d949c8d98c8c8b99e94989095d79a9694">[email&#160;protected]</a>
+                                                data-cfemail="f9989d9c9c959891949c9d949c8d98c8c8b99e94989095d79a9694">{{ Auth::user()->email }}</a>
                                             <b class='text-success'>Verified<i class='bi bi-check-all text-success'></i></b>
                                         </div>
                                     </div>

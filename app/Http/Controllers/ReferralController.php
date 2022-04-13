@@ -12,8 +12,11 @@ class ReferralController extends Controller
 {
     public function index()
     {
-        $users = User::all();
-        return view('user.refferals.refferals', compact('users'));
+        $users = User::where('id', Auth::id())->first();
+
+        $sponsor = User::where('user_name', $users->sponsor)->get();
+
+        return view('user.refferals.refferals', compact('sponsor'));
     }
 
     public function updatePosition(Request $request)
@@ -129,6 +132,7 @@ class ReferralController extends Controller
 
     public function checkPosition(Request $request)
     {
+        dd($request);
         $userName = User::where('user_name', 'like', $request['sponsor'])->pluck('user_name')->first();
         $check_position = User::where('placement_id', $userName)->where('position', $request['position'])->orderBy('id', 'desc')->first();
         if (is_null($check_position)) {
