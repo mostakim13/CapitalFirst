@@ -7,7 +7,7 @@
         <div class="content-wrapper">
             <div class="content-header row">
             </div>
-            <div class="content-body">
+            <div class="content-body container">
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <div class="card border-top-warning border-bottom-warning">

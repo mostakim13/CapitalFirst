@@ -6,15 +6,15 @@
         <div class="content-wrapper">
             <div class="content-header row">
             </div>
-            <div class="content-body">
+            <div class="content-body container">
 
 
                 <div class="row">
                     <div class="col-xl-6 col-sm-6 mb-20">
-                        <div class="card border-top-warning border-bottom-warning">
+                        <div class="card border-top-warning border-bottom-warning bg-primary">
                             <div class="card-body">
-                                <h5 class="card-title p-0 pt-4">{{ Auth::user()->left_count }}</h5>
-                                <p class="card-text"><i class="bi bi-diagram-2 text-danger"></i> <b>LEFT</b>
+                                <h5 class="card-title p-0 pt-4 text-white">{{ Auth::user()->left_count }}</h5>
+                                <p class="card-text text-white"><i class="bi bi-diagram-2 text-danger"></i> <b>LEFT</b>
                                     <small>Referrals</small>
                                 </p>
                             </div>
@@ -22,17 +22,17 @@
                     </div>
 
                     <div class="col-xl-6 col-sm-6 mb-20">
-                        <div class="card border-top-warning border-bottom-warning">
+                        <div class="card border-top-warning border-bottom-warning bg-secondary">
                             <div class="card-body">
-                                <h5 class="card-title p-0 pt-4">{{ Auth::user()->right_count }}</h5>
-                                <p class="card-text"><i class="bi bi-diagram-2 text-danger"></i> <b>RIGHT</b>
+                                <h5 class="card-title p-0 pt-4 text-white">{{ Auth::user()->right_count }}</h5>
+                                <p class="card-text text-white"><i class="bi bi-diagram-2 text-danger"></i> <b>RIGHT</b>
                                     <small>Referrals</small>
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" style="margin-left: -12px; margin-right: -12px;">
                     <div class="card-body">
                         <div class="col-md-12">
                             <div class="row">

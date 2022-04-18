@@ -6,7 +6,7 @@
         <div class="content-wrapper">
             <div class="content-header row">
             </div>
-            <div class="content-body">
+            <div class="content-body container">
 
                 <section class="section profile">
                     <div class="row">
@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" style="margin-left: 14px; margin-right: 14px;">
                                 <div class="col-12">
                                     <div class="row">
                                         <div class="col-6">
@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row" style="margin-left: 14px; margin-right: 14px;">
                                 <div class="col-12">
                                     <div class="row">
                                         <div class="col-6">

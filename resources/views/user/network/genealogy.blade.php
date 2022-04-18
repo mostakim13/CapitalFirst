@@ -6,14 +6,14 @@
         <div class="content-wrapper">
             <div class="content-header row">
             </div>
-            <div class="content-body">
+            <div class="content-body container">
 
                 <div class="row">
                     <div class="col-md-3 col-sm-6 mb-20 col-6">
-                        <div class="card border-left-warning">
+                        <div class="card border-left-warning bg-primary text-white">
                             <div class="card-body">
-                                <h5 class="card-title p-0 pt-4">{{ Auth::user()->left_count }}</h5>
-                                <p class="card-text"><i class="bi bi-diagram-2 text-danger"></i> Left Members</p>
+                                <h5 class="card-title p-0 pt-4 text-white">{{ Auth::user()->left_count }}</h5>
+                                <p class="card-text text-white"><i class="bi bi-diagram-2 text-danger"></i> Left Members</p>
                             </div>
                         </div>
                     </div>
@@ -21,15 +21,16 @@
 
 
                     <div class="col-md-3 col-sm-6 mb-20 col-6">
-                        <div class="card border-left-warning">
+                        <div class="card border-left-warning bg-secondary text-white">
                             <div class="card-body">
-                                <h5 class="card-title p-0 pt-4">12755</h5>
-                                <p class="card-text"><i class="bi bi-diagram-2 text-danger"></i> Left Bonus Points</p>
+                                <h5 class="card-title p-0 pt-4 text-white">0</h5>
+                                <p class="card-text text-white"><i class="bi bi-diagram-2 text-danger"></i> Left Bonus
+                                    Points</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-20 col-6">
-                        <div class="card border-left-warning">
+                        <div class="card border-left-warning bg-success text-white">
                             <div class="card-body">
                                 <h5 class="card-title p-0 pt-4">{{ Auth::user()->right_count }}</h5>
                                 <p class="card-text"><i class="bi bi-diagram-2 text-danger"></i> Right Members</p>
@@ -37,7 +38,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-20 col-6">
-                        <div class="card border-left-warning">
+                        <div class="card border-left-warning text-white bg-danger">
                             <div class="card-body">
                                 <h5 class="card-title p-0 pt-4">0</h5>
                                 <p class="card-text"><i class="bi bi-diagram-2 text-success"></i> Right Bonus Points
@@ -50,15 +51,15 @@
                     <div class="col-md-6">
                         <div class="card">
                             <form>
-                                <div class="card-body p-4">
+                                <div class="card-body p-4 bg-danger">
                                     <div class="row g-3">
                                         <div class="col-md-5">
                                             <input type="text" name="left_search" id="left_search" value=""
                                                 class="search form-control" placeholder="start search here">
-                                            <small class="pl-2 text-uppercase font-weight-bold text-muted">search</small>
+                                            <small class="pl-2 text-uppercase font-weight-bold text-white">search</small>
                                             <input type="hidden" name="type" value="left">
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-5 bg-danger">
                                             <select name="left_rank" id="left_rank" class="search form-control">
                                                 <option value="">choose option</option>
                                                 <option value="STARTER" class="text-uppercase">STARTER</option>
@@ -80,7 +81,7 @@
                                                 <option value="DIAMOND" class="text-uppercase">DIAMOND</option>
                                                 <option value="ROYAL DIAMOND" class="text-uppercase">ROYAL DIAMOND</option>
                                             </select>
-                                            <small class="pl-2 text-uppercase font-weight-bold text-muted">Ranks</small>
+                                            <small class="pl-2 text-uppercase font-weight-bold text-white">Ranks</small>
                                         </div>
                                         <div class="col-md-2">
                                             <button type="submit" class="btn btn-warning btn-sm float-end w-100 py-2">Search
@@ -90,11 +91,12 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="card border-top-warning  border-bottom-warning">
-                            <div class="card-body">
-                                <h5 class="card-title"><i class="bi bi-person-square text-danger"></i> Left Members</h5>
+                        <div class="card border-top-warning  border-bottom-warning bg-warning text-white">
+                            <div class="card-body text-white">
+                                <h5 class="card-title text-white"><i class="bi bi-person-square text-danger"></i> Left
+                                    Members</h5>
                                 <table class="table table-hover">
-                                    <thead>
+                                    <thead class="text-black">
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Name</th>
@@ -102,133 +104,28 @@
                                             <th scope="col">Rank</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="text-white">
                                         @php
-                                            $child_left = Auth::user()
+                                            $child_lefts = Auth::user()
                                                 ->placements->where('position', 1)
-                                                ->first();
+                                                ->get();
                                         @endphp
-                                        <tr>
-                                            <td>1</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
+                                        @foreach ($child_lefts as $child_left)
+                                            <tr>
+                                                <td>{{ $loop->index + 1 }}</td>
+                                                <td>
+                                                    {{ $child_left->name }}
+                                                </td>
 
-                                            </td>
-
-                                            <td>25040</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Aqeel Ahmed
-                                            </td>
-                                            <td>15000</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Haris111
-                                            </td>
-                                            <td>1740</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Umairshafiq
-                                            </td>
-                                            <td>1130</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Muhammad Umer
-                                            </td>
-                                            <td>1130</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>6</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Rizwan Iqbal
-                                            </td>
-                                            <td>1052</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>7</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Hamza Sarwar
-                                            </td>
-                                            <td>1101</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>8</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Fahad Tahir
-                                            </td>
-                                            <td>1700</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>9</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Ghasfar Ali Mirza
-                                            </td>
-                                            <td>1730</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>10</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Hamdan Kaiser Sheikh
-                                            </td>
-                                            <td>1700</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>11</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Fatima Jabeen
-                                            </td>
-                                            <td>25510</td>
-                                            <td>STARTER</td>
-                                        </tr>
-                                        <tr>
-                                            <td>12</td>
-                                            <td>
-                                                <img style="width: 20px; height: 20px" src="/assets/flags/pk.svg"
-                                                    alt="flag">
-                                                Fatima Jabeen
-                                            </td>
-                                            <td>25510</td>
-                                            <td>STARTER</td>
-                                        </tr>
+                                                <td>25040</td>
+                                                <td>STARTER</td>
+                                            </tr>
+                                            @if ($child_lefts == null)
+                                                <tr>
+                                                    <td>No data</td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -243,7 +140,7 @@
                                             <input type="text" name="right_search" id="right_search" value=""
                                                 class="search form-control" placeholder="start search here">
                                             <input type="hidden" name="type" value="right">
-                                            <small class="pl-2 text-uppercase font-weight-bold text-muted">search</small>
+                                            <small class="pl-2 text-uppercase font-weight-bold ">search</small>
                                         </div>
                                         <div class="col-md-5">
                                             <select name="right_rank" id="right_rank" class="search form-control">
@@ -267,7 +164,7 @@
                                                 <option value="DIAMOND" class="text-uppercase">DIAMOND</option>
                                                 <option value="ROYAL DIAMOND" class="text-uppercase">ROYAL DIAMOND</option>
                                             </select>
-                                            <small class="pl-2 text-uppercase font-weight-bold text-muted">Ranks</small>
+                                            <small class="pl-2 text-uppercase font-weight-bold ">Ranks</small>
                                         </div>
                                         <div class="col-md-2">
                                             <button type="submit" class="btn btn-warning btn-sm float-end w-100 py-2">Search
@@ -277,7 +174,14 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="card border-top-warning  border-bottom-warning">
+
+                        @php
+                            $child_rights = Auth::user()
+                                ->placements->where('position', 2)
+                                ->get();
+                        @endphp
+
+                        <div class="card border-top-warning  border-bottom-warning bg-info">
                             <div class="card-body">
                                 <h5 class="card-title"><i class="bi bi-person-square text-success"></i> Right Members
                                 </h5>
@@ -290,10 +194,16 @@
                                             <th scope="col">Rank</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td colspan="10" class="text-center text-danger">NO DATA</td>
-                                        </tr>
+                                    <tbody class="text-white">
+                                        @foreach ($child_rights as $child_right)
+                                            <tr>
+                                                <td>{{ $loop->index + 1 }}</td>
+                                                <td>{{ $child_right->name }}</td>
+                                                <td></td>
+                                                <td></td>
+
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

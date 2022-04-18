@@ -6,43 +6,49 @@
         <div class="content-wrapper">
             <div class="content-header row">
             </div>
-            <div class="content-body">
+            <div class="content-body container">
 
                 <div class="row">
                     <div class="col-xl-3 col-sm-6 mb-20">
-                        <div class="card border-left-warning">
+                        <div class="card border-left-warning bg-primary">
                             <div class="card-body">
-                                <h5 class="card-title p-0 pt-4">Bonus Account</h5>
+                                <h5 class="card-title p-0 pt-4 text-white">Bonus Account</h5>
                                 <p class="card-text">Statistics <i class="bi bi-clipboard-data text-danger"></i></p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-20">
-                        <div class="card border-left-warning">
+                        <div class="card border-left-warning bg-secondary">
                             <div class="card-body">
-                                <h5 class="card-title p-0 pt-4">$ 0</h5>
-                                <p class="card-text">Direct Bonus <i class="bi bi-person-lines-fill text-primary"></i></p>
+                                <h5 class="card-title p-0 pt-4 text-white">$ 0</h5>
+                                <p class="card-text text-white">Direct Bonus <i
+                                        class="bi bi-person-lines-fill text-primary"></i>
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-20">
-                        <div class="card border-left-warning">
+                        <div class="card border-left-warning bg-success">
                             <div class="card-body">
-                                <h5 class="card-title p-0 pt-4">$ 0</h5>
-                                <p class="card-text">Network Bonus <i class="bi bi-diagram-2 text-primary"></i></p>
+                                <h5 class="card-title p-0 pt-4 text-white">$ 0</h5>
+                                <p class="card-text text-white">Network Bonus <i class="bi bi-diagram-2 text-primary"></i>
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-20">
-                        <div class="card border-left-warning">
+                        <div class="card border-left-warning bg-danger">
                             <div class="card-body">
-                                <h5 class="card-title p-0 pt-4">$ 0</h5>
-                                <p class="card-text">Pending Bonus <i class="bi bi-unlock-fill text-danger"> Apr 06, 2022 </i></p>
+                                <h5 class="card-title p-0 pt-4 text-white">$ 0</h5>
+                                <p class="card-text text-white">Pending Bonus <i class="bi bi-unlock-fill text-danger"> Apr
+                                        06,
+                                        2022 </i></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card border-top-warning  border-bottom-warning">
+                <div class="card border-top-warning  border-bottom-warning"
+                    style="margin-left: -10px; margin-right: -10px;">
                     <div class="card-body">
                         <h5 class="card-title"><i class="bi bi-diagram-2 text-primary"></i> Bonus History</h5>
                         <table class="table table-hover">

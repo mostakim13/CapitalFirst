@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
 
@@ -85,7 +85,7 @@ class User extends Authenticatable
     }
     public function placements()
     {
-        return $this->hasMany(User::class, 'placement_id', 'user_name');
+        return $this->belongsTo(User::class, 'placement_id', 'user_name');
     }
     public function childs()
     {

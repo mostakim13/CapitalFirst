@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\UserCredential;
 
 class RegisterController extends Controller
 {
@@ -91,6 +92,11 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'placement_id' => $placement_id
         ]);
+
+        return $user;
+
+
+
         if ($position_id == 1) {
             User::where('user_name', $placement_id)
                 ->update(['left_side' => $user->user_name]);
@@ -99,7 +105,6 @@ class RegisterController extends Controller
                 ->update(['right_side' => $user->user_name]);
         }
         $this->binary_count($placement_id, $position_id);
-
     }
 
     public function showRegistrationForm(Request $request)
@@ -186,7 +191,4 @@ class RegisterController extends Controller
 
         return $pos_ac;
     }
-
-
-
 }
